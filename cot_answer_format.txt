@@ -1,0 +1,10 @@
+Identify the possible entity mentions: {locate_list}.
+
+Now, categorize them into the corresponding types:
+{reasoning_text}
+
+Output the JSON list:
+
+```json
+{json_answer}
+```

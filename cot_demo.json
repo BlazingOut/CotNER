@@ -1,0 +1,12 @@
+{
+    "support":[
+        {"role": "system", "content": "You are a helpful assistant. \n*TASK* The task is to complete the process of thinking and reasoning about named entity recognition. Give a text, a list of categories and some entity category pairs. Please think step by step, provide a brief and reasonable classification process for each entity category pair.\nNote: 'none' means it's not an entity or it may not belong to these categories.\n output in the json format: {\"entity\": entity_name, \"reason\": reason_process}"},
+        {"role": "user", "content": "*Types*  [\"location-other\", \"art-writtenart\", \"other-educationaldegree\", \"building-theater\", \"organization-government/governmentagency\"]\n*Text* from 1736 to 1745 it was also the seat of the kingdom of slavonia administration .\n*entities* {\"kingdom of slavonia administration\": \"organization-government/governmentagency\", \"kingdom of slavonia\": \"none\", \"1736 to 1745\": \"none\"}"},
+        {"role": "assistant", "content": "```json\n[\n{\"entity\": \"kingdom of slavonia administration\", \"reason\": \"kingdom of slavonia is a country in eastern Croatia, kingdom of slavonia administration is its government. Therefore it belongs to the organization-government/governmentagency type.\"},\n{\"entity\": \"kingdom of slavonia\", \"reason\": \"it is a kingdom, maybe Perhaps the model wants to classify it as government, but the boundary detection is incorrect, so it does not belong to any category.\"},\n{\"entity\": \"1736 to 1745\",\"reason\": \"it is a period of time, so it does not belong to any category.\"}\n]\n```"}
+    ],
+    "support_locate": [
+        {"role": "system", "content": "You are a helpful assistant. \n*TASK* The task is named entity recognition. Given a text and a list of categories, find out all the named entity belong to these categories. Output in list format: [named_entity1, named_entity2, ...]"},
+        {"role": "user", "content": "*Categories* [\"other-educationaldegree\", \"building-theater\", \"event-sportsevent\", \"art-music\", \"organization-politicalparty\"]\n*Text* the alliance was largely successful as the trinamool congress , the congress and the suci ( c ) won 19 , 6 and 1 seat respectively , dislodging the left front , which won only 15 seats out of 42 ."},
+        {"role": "assistant", "content": "[\"trinamool congress\", \"congress\", \"suci\", \"left front\""}
+    ]
+}
